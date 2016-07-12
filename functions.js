@@ -11,8 +11,8 @@
  *  variable names you will create as they will become input to _other_
  *  functions.
  */
-
-
+var a = 3;
+var b = 2;
 /**
  *  #2
  *  Function - add
@@ -20,8 +20,12 @@
  *  This function returns the result of adding `a` and `b` together.
  *  Store this value in a variable named `sum`.
  */
+function add(pizza, beer){
+	return pizza + beer;
+}
 
-
+var sum = add(a, b);
+console.log("sum", sum);
 /**
  *  #3
  *  Function - subtract
@@ -29,8 +33,11 @@
  *  This function returns the result of subtracting `b` from `a`.
  *  Store this value in a variable named `difference`
  */
-
-
+function subtract(a, b){
+	return b - a;
+}
+var difference = subtract(a, b)
+console.log("difference", difference);
 /**
  *  #4
  *  Function - multiply
@@ -38,8 +45,11 @@
  *  This function returns the result of multiplying `b` by `a`.
  *  Store this value in a variable named `product`
  */
-
-
+function multiply(a, b){
+	return a * b;
+}
+var product = multiply(a, b);
+console.log("product", product);
 /**
  *  #5
  *  Function - checkDifference
@@ -49,8 +59,10 @@
  *  "My football team lost X times this week", where `X` is the
  *  value stored in `difference`.
  */
-
-
+function loss(difference){
+	return "My football team lost " + difference + " times this week";
+}
+console.log(loss(difference));
 /**
  *  #6
  *  Function - checkSum
@@ -60,8 +72,10 @@
  *  "I CAN ADDZ X NUMBERS"  where `X` is the value
  *  stored in the variable `sum`.
  */
-
-
+function checkSum(sum){
+	return "I CAN ADDZ " + sum + " NUMBERS";
+}
+console.log(checkSum(sum));
 /**
  *  #7
  *  Function - checkProduct
@@ -70,8 +84,10 @@
  *  multiplies it by the number stored at `difference` and
  *  then prints the result to the console.
  */
-
-
+function checkProduct(product, difference){
+	return product * difference;
+}
+console.log(checkProduct(product, difference));
 /**
  *  #8
  *  Function - addThenSubtract
@@ -85,8 +101,10 @@
  *  **example:**
  *      addThenSubtract(4, 5, 7); //-> returns 2 because 4 + 5 - 7 = 2
  */
-
-
+function addThenSubtract(x, y, z){
+	return x + y - z;
+}
+console.log(addThenSubtract(sum, difference, product));
 /**
  *  #9
  *  Function - addThenMultiply
@@ -98,8 +116,11 @@
  *
  *  Store the return of this function to a variable named `howMany`
  */
-
-
+function addThenMultiply(x, y, z){
+	return (x + y) * z;
+}
+var howMany = addThenMultiply(sum, difference, product);
+console.log(howMany);
 /**
  *  #10
  *  Function - createFullName
@@ -115,7 +136,11 @@
  * Store the return value to a variable named `myFullName`
  */
 
-
+function createFullName(firstName,lastName){
+	return firstName + " " + lastName;
+}
+var myFullName = createFullName("Mary","Smith");
+console.log(myFullName);
 /**
  *  #11
  *  Function - verifyDrinkingAge
@@ -130,8 +155,11 @@
  *  **Call this function and pass in a number value.
  *  Store the return value to a variable named** `canDrinkBeer`
  */
-
-
+function verifyDrinkingAge(age){
+	return result = age >= 21;
+}
+var canDrinkBeer = verifyDrinkingAge(18);
+console.log(canDrinkBeer);
 /**
  *  #12
  *  Function - throwParty
@@ -141,8 +169,14 @@
  *  "The Party will have tons of Cake!" otherwise this message
  *  should be "This Party will have an open bar".
  */
-
-
+function throwParty(canDrinkBeer){
+	if (canDrinkBeer === false){
+		return "The Party will have tons of Cake!";
+	} else {
+		return "This Party will have an open bar.";
+	}
+}
+console.log(throwParty(canDrinkBeer));
 /**
  *  #13
  *  Function - eatFood
@@ -162,8 +196,10 @@
   *  **example output:**
  *      "Peter Bojanglesloves loves to eat California Burritos"
  */
-
-
+function eatFood(firstName, lastName, food){
+	return createFullName(firstName, lastName) + " loves to eat " + food;
+}
+console.log(eatFood("Mary", "Smith", "Pizza"));
 /**
  *  #14
  *  Function - repeater
@@ -175,4 +211,13 @@
  *  the message will be `"Bacon Pancakes, makin' Bacon Pancakes..."`
  *  othewise the message will be `"Let it go.... LET IT GOOOOOOoOoOoOo..."`
  */
-
+function repeater(canDrinkBeer) {
+	if (canDrinkBeer) {
+		return "Bacon Pancakes, makin' Bacon Pancakes...";
+	} else {
+		return "Let it go.... LET IT GOOOOOOoOoOoOo...";
+	}
+}
+for (var i = 1; i <= howMany; i++) {
+	console.log(repeater(canDrinkBeer));
+}
