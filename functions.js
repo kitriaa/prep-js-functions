@@ -36,7 +36,7 @@ console.log("sum", sum);
 function subtract(a, b){
 	return b - a;
 }
-var difference = subtract(a, b)
+var difference = subtract(a, b);
 console.log("difference", difference);
 /**
  *  #4
